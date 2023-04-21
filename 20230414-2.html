@@ -121,6 +121,7 @@
                     <label for="" class="form-check-label">AB型</label>
                 </div>
             </div>
+         
             <button class="btn btn-dark mt-3" id="ok_btn">確認</button>
             <div class="demo"></div>
         </div>
@@ -129,113 +130,89 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/jquery-3.6.4.min.js"></script>
     <script>
-        // $("#age").change(function () {
-        //     console.log($(this).val());
-        //     $("#age_text").html($(this).val() + ("歲"))
-        // })
-
-        // $(function () {
-        //     $("#ok_btn").click(function () { 
-        //         console.log($("#username").val());
-        //         console.log($("#password").val());
-        //         console.log($("#email").val());
-        //         console.log($("#birthday").val());
-
-        //         var myinterest = [];
-        //         $.each($("input[name='interest']:checked"), function () {
-
-        //             myinterest.push($(this).val());
-        //         })
-
-
-        //         var blood = [];
-        //         $.each($("input[name='blood']:checked"), function () {
-        //             blood.push($(this).val());
-        //         })
-
-        //         $(".demo").html("<h1>帳號:" + $("#username").val() + "</h1><h1>密碼:" + $("#password").val() + "</h1><h1>email:" + $("#mail").val() + "</h1><h1>生日:" + $("#birthday").val() + "</h1><h1>年齡:" + $("#age").val() + "歲</h1><h1>最高學歷:" + $("#edu").val() + "<h1>興趣:" + myinterest.join("/")+ "<h1>血型:" + blood + "</h1>");
-        //     })
-        // });
-        var flag_username=false;
-        var flag_password=false;
-        var flag_con_password=false;
-        var flag_email=false;
-        $("#username").bind("input propertychange",function(){
-            if($(this).val().length>4 && $(this).val().length<11){
+ 
+        var flag_username = false;
+        var flag_password = false;
+        var flag_con_password = false;
+        var flag_email = false;
+        $("#username").bind("input propertychange", function () {
+            if ($(this).val().length > 4 && $(this).val().length < 11) {
                 $(".msg_username").html("帳號字數符合");
-                $(".msg_username").css("color","green");
-                flag_username=true;
+                $(".msg_username").css("color", "green");
+                flag_username = true;
             }
-            else{
+            else {
                 $(".msg_username").html("輸入字數不符合");
-                $(".msg_username").css("color","red");
-                flag_username=false;
+                $(".msg_username").css("color", "red");
+                flag_username = false;
             }
         })
-        $("#password").bind("input propertychange",function(){
-                console.log($(this).val().length);
-                if($(this).val().length>2 && $(this).val().length<11){
-                    $(".msg_password").html("密碼字數符合規則!");
-                    $(".msg_password").css("color","green");
-                    flag_password=true;
-                }
-                else{
-                    $(".msg_password").html("密碼字數不符合!");
-                    $(".msg_password").css("color","red");
-                    flag_password=false;
-                }
+        $("#password").bind("input propertychange", function () {
+            console.log($(this).val().length);
+            if ($(this).val().length > 2 && $(this).val().length < 11) {
+                $(".msg_password").html("密碼字數符合規則!");
+                $(".msg_password").css("color", "green");
+                flag_password = true;
+            }
+            else {
+                $(".msg_password").html("密碼字數不符合!");
+                $(".msg_password").css("color", "red");
+                flag_password = false;
+            }
         })
-        $("#con_password").bind("input propertychange",function(){
-            if($(this).val() == $("#password").val()){
+        $("#con_password").bind("input propertychange", function () {
+            if ($(this).val() == $("#password").val()) {
                 $(".msg").html("密碼符合");
-                $(".msg").css("color","green");
-                flag_con_password=true;
+                $(".msg").css("color", "green");
+                flag_con_password = true;
             }
-            else{
+            else {
                 $(".msg").html("密碼錯誤");
-                $(".msg").css("color","red");
-                flag_con_password=false;
+                $(".msg").css("color", "red");
+                flag_con_password = false;
             }
         })
-        $("#mail").bind("input propertychange",function(){
-            if($(this).val().length >4 && $(this).val().length <11){
+        $("#mail").bind("input propertychange", function () {
+            if ($(this).val().length > 4 && $(this).val().length < 11) {
                 $(".msg_email").html("email字數符合規則!");
-                $(".msg_email").css("color","green");
-                flag_email=true;
+                $(".msg_email").css("color", "green");
+                flag_email = true;
             }
-            else{
+            else {
                 $(".msg_email").html("email字數不符合規則!");
-                $(".msg_email").css("color","red");
-                flag_email=false;
+                $(".msg_email").css("color", "red");
+                flag_email = false;
             }
         })
-        $(function(){
-            $("#ok_btn").click(function(){
+        $(function () {
+            $("#ok_btn").click(function () {
                 console.log($("#birthday").val());
             })
         })
-        $("#age").change(function () {
+        $("#age").change(function () 
+        
+        {
             console.log($(this).val());
             $("#age_text").html($(this).val() + ("歲"))
         })
-        
-                var myinterest = [];
-                $.each($("input[name='interest']:checked"), function () {
 
-                    myinterest.push($(this).val());
-                    
-                })
+        var myinterest = [];
+        $.each($("input[name='interest']:checked"), function () {
+
+            myinterest.push($(this).val());
+
+        })
 
 
-                var blood = [];
-                $.each($("input[name='blood']:checked"), function () {
-                    blood.push($(this).val());
-                })
-        $("#ok_btn").click(function(){
-            if(flag_username && flag_password && flag_con_password && flag_email){
-                $(".demo").html("<h2>帳號:"+$("#username").val()+"</h2><h2>密碼:"+$("#password").val()+"</h2><h2>信箱:"+$("#mail").val()+"</h2><h2>生日:"+$("#birthday").val()+"</h2><h2>年齡:"+$("#age").val()+"</h2><h2>最高學歷:" + $("#edu").val() + "</h2><h2>興趣:" + myinterest.join("/")+ "</h2><h2>血型:" + blood + "</h2>");
+        var myblood = [];
+        $.each($("input[name='blood']:checked"), function () {
+            myblood.push($(this).val());
+        })
+        $("#ok_btn").click(function () {
+            if (flag_username && flag_password && flag_con_password && flag_email) {
+                $(".demo").html("<h2>帳號:" + $("#username").val() + "</h2><h2>密碼:" + $("#password").val() + "</h2><h2>信箱:" + $("#mail").val() + "</h2><h2>生日:" + $("#birthday").val() + "</h2><h2>年齡:" + $("#age").val() + "</h2><h2>最高學歷:" + $("#edu").val() + "</h2><h2>興趣:" + myinterest.join("/") + "</h2><h2>血型:" + myblood + "</h2>");
             }
-            else{
+            else {
                 alert("欄位有錯");
             }
         })
