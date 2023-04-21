@@ -1,0 +1,146 @@
+:root{
+    --mycolor1:#F5E2D4;
+    --mycolor2:#ECBA73;
+    --mycolor3:#A8DFF1;
+    --mycolor4:#024757;
+    --mycolor5:#0a0a0a;
+    --mycolor6:#ff8080;
+    --mycolor7:#ffffff;
+    --mycolor8: #FAA98B;
+    --mycolor9: #E6AECF;
+    --mycolor10: #AEE0DD;
+    --mycolor11: #01ACBD;
+    --mycolor12: #E95761;
+    --mycolor13: #ebe3f5;
+    --mycolor14: #1E4620;
+    --mycolor15: #3C1832;
+    --mycolor16: #faf6f9;
+}
+*{
+    margin:0;
+    padding: 0;
+}
+.wrapper{
+    text-align: center;
+    padding-top: 15px;
+    background-color: var(--mycolor7);
+    
+}
+.bodder{
+    width: 1024px;
+    margin:0 auto;
+    
+}
+.header{
+    width: 1024px;
+    margin:0 auto;
+
+
+}
+nav{
+    
+    background-color: var(--mycolor6);
+    
+}
+nav ul{
+    display:inline-block;
+   
+    
+}
+nav ul li{
+    float: left;
+    list-style-type: none;
+}
+nav ul li a{
+    text-decoration: none;
+    background-color: var(--mycolor3);
+    padding:15px;
+    display: block;
+    margin: 5px;
+    border-radius: 5px;
+    font-weight: bolder;
+}
+nav ul li a:hover{
+    color: white;
+    background-color: var(--mycolor4);
+}
+.content{
+    background-color: var(--mycolor1);
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.content h1{
+    color: red;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding-top: 15px;
+}
+.content p{
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: bolder;            
+}
+.content a{
+    display: block;
+    width: 150px;
+    height: 50px;
+    background-color: var(--mycolor2);
+    text-decoration: none;
+    line-height: 50px;
+    margin: 0 auto;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    
+}
+.footer{
+    background-color: var(--mycolor4);
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    
+}
+.none{
+    height: 5px;    
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.sidebar{
+    list-style-type: none;
+    float:left;
+    width: 200px;
+    height: 650px;
+    background-color: var(--mycolor11);
+}
+.sidebar  li {
+    text-decoration: none;
+    list-style-type: none;
+    border: 3px solid var(--mycolor12);
+    padding: 15px;
+    margin: 10px;
+}
+.sidebar li a{
+    text-decoration: none;
+}
+.sidebar li:hover{
+    border-color: var(--mycolor3);
+    font-weight: bolder;
+}
+
+
+@media screen and (max-width:1024px) {
+    .bodder{
+        width: 100%;
+    }
+    .sidebar{
+        width: 100%;
+        height: auto;
+    }
+    .sidebar li{
+        display: inline-block;
+
+    }
+    .sidebar a{
+        float: left;
+    }
+
+}
