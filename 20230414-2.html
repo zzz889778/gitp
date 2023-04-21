@@ -211,7 +211,7 @@
         })
         $(function(){
             $("#ok_btn").click(function(){
-                consoloe.log($("#birthday").val());
+                console.log($("#birthday").val());
             })
         })
         $("#age").change(function () {
@@ -223,6 +223,7 @@
                 $.each($("input[name='interest']:checked"), function () {
 
                     myinterest.push($(this).val());
+                    
                 })
 
 
@@ -232,7 +233,7 @@
                 })
         $("#ok_btn").click(function(){
             if(flag_username && flag_password && flag_con_password && flag_email){
-                $(".demo").html("<h2>帳號:"+$("#username").val()+"</h2><h2>密碼:"+$("#password").val()+"</h2><h2>信箱:"+$("#mail").val()+"</h2><h2>生日:"+$("#birthday").val()+"</h2><h2>年齡:"+$("#age").val()+"</h2><h2>年齡:"+$("#age").val()+"</h2><h2>年齡:"+$("#age").val()+"</h2>");
+                $(".demo").html("<h2>帳號:"+$("#username").val()+"</h2><h2>密碼:"+$("#password").val()+"</h2><h2>信箱:"+$("#mail").val()+"</h2><h2>生日:"+$("#birthday").val()+"</h2><h2>年齡:"+$("#age").val()+"</h2><h2>最高學歷:" + $("#edu").val() + "</h2><h2>興趣:" + myinterest.join("/")+ "</h2><h2>血型:" + blood + "</h2>");
             }
             else{
                 alert("欄位有錯");
