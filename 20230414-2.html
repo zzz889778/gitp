@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mycss.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="fs-2 text-center bg-black" style="color: white;">首頁</div>
+            </div>
+            <div class="col-2 mt-3">
+                <label for="username">帳號</label>
+            </div>
+            <div class="col-10 mt-3">
+                <input type="text" class="form-control" id="username" name="username" placeholder="請輸入帳號，字數5~10 !!">
+            </div>
+            <div class="col-2 mt-3"></div>
+            <div class="col-10  mt-3 msg_username"></div>
+
+            <div class="col-2 mt-3">
+                <label for="password">密碼</label>
+            </div>
+            <div class="col-10 mt-3">
+                <input type="password" class="form-control" id="password" name="password" placeholder="請輸入密碼，字數3~10 !!">
+            </div>
+            <div class="col-2 mt-3"></div>
+            <div class="col-10 mt-3 msg_password"></div>
+
+            <div class="col-2 mt-3">
+                <label for="con_password">再次輸入密碼</label>
+            </div>
+            <div class="col-10 mt-3">
+                <input type="password" id="con_password" name="con_password" placeholder="再次輸入密碼" class="form-control">
+            </div>
+            <div class="col-2 mt-3"></div>
+            <div class="col-10 mt-3 msg"></div>
+
+            <div class="col-2 mt-3">
+                <label for="mail">Email</label>
+            </div>
+            <div class="col-10 mt-3">
+                <input type="email" class="form-control" id="mail" name="mail" placeholder="請輸入信箱!!，字數5~12">
+            </div>
+            <div class="col-2 mt-3"></div>
+            <div class="col-10 mt-3 msg_email"></div>
+
+            <div class="col-2 mt-3">
+                <label for="birthday">生日</label>
+            </div>
+            <div class="col-10 mt-3">
+                <input type="date" class="form-control" id="birthday" name="birthday">
+            </div>
+
+            <div class="col-2 mt-3">
+                <label for="age" id="age_text">年齡</label>
+            </div>
+            <div class="col-10 mt-3">
+                <input type="range" id="age" class="form-range" name="age">
+            </div>
+
+            <div class="col-2 mt-3">
+                <label for="edu">最高學歷</label>
+            </div>
+            <div class="col-10 mt-3">
+                <select name="edu" id="edu" class="form-select">
+                    <option value="研究所">研究所</option>
+                    <option value="大學">大學</option>
+                    <option value="高中">高中</option>
+                    <option value="國中">國中</option>
+                    <option value="其他">其他</option>
+                </select>
+            </div>
+
+            <div class="col-2 mt-3">
+                <label for="interest">興趣(複選)</label>
+            </div>
+            <div class="col-10 mt-3">
+                <div class="form-check">
+                    <input type="checkbox" id="" class="form-check-input" name="interest" value="運動">
+                    <label for="" class="form-check-label">運動</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="" class="form-check-input" name="interest" value="閱讀">
+                    <label for="" class="form-check-label">閱讀</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="" name="interest" value="電影" class="form-check-input">
+                    <label for="" class="form-check-label">電影</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="" name="interest" value="睡覺" class="form-check-input">
+                    <label for="" class="form-check-label">睡覺</label>
+                </div>
+            </div>
+            <div class="col-2 mt-3">
+                <label for="blood">血型(單選)</label>
+            </div>
+            <div class="col-10 mt-3">
+                <div class="form-check-inline">
+                    <input type="radio" class="form-check-input" name="blood" value="A型">
+                    <label for="" class="form-check-label">A型</label>
+                </div>
+                <div class="form-check-inline">
+                    <input type="radio" class="form-check-input" name="blood" value="B型">
+                    <label for="" class="form-check-label">B型</label>
+                </div>
+                <div class="form-check-inline">
+                    <input type="radio" class="form-check-input" name="blood" value="O型">
+                    <label for="" class="form-check-label">O型</label>
+                </div>
+                <div class="form-check-inline">
+                    <input type="radio" class="form-check-input" name="blood" value="AB型">
+                    <label for="" class="form-check-label">AB型</label>
+                </div>
+            </div>
+            <button class="btn btn-dark mt-3" id="ok_btn">確認</button>
+            <div class="demo"></div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.6.4.min.js"></script>
+    <script>
+        // $("#age").change(function () {
+        //     console.log($(this).val());
+        //     $("#age_text").html($(this).val() + ("歲"))
+        // })
+
+        // $(function () {
+        //     $("#ok_btn").click(function () { 
+        //         console.log($("#username").val());
+        //         console.log($("#password").val());
+        //         console.log($("#email").val());
+        //         console.log($("#birthday").val());
+
+        //         var myinterest = [];
+        //         $.each($("input[name='interest']:checked"), function () {
+
+        //             myinterest.push($(this).val());
+        //         })
+
+
+        //         var blood = [];
+        //         $.each($("input[name='blood']:checked"), function () {
+        //             blood.push($(this).val());
+        //         })
+
+        //         $(".demo").html("<h1>帳號:" + $("#username").val() + "</h1><h1>密碼:" + $("#password").val() + "</h1><h1>email:" + $("#mail").val() + "</h1><h1>生日:" + $("#birthday").val() + "</h1><h1>年齡:" + $("#age").val() + "歲</h1><h1>最高學歷:" + $("#edu").val() + "<h1>興趣:" + myinterest.join("/")+ "<h1>血型:" + blood + "</h1>");
+        //     })
+        // });
+        var flag_username=false;
+        var flag_password=false;
+        var flag_con_password=false;
+        var flag_email=false;
+        $("#username").bind("input propertychange",function(){
+            if($(this).val().length>4 && $(this).val().length<11){
+                $(".msg_username").html("帳號字數符合");
+                $(".msg_username").css("color","green");
+                flag_username=true;
+            }
+            else{
+                $(".msg_username").html("輸入字數不符合");
+                $(".msg_username").css("color","red");
+                flag_username=false;
+            }
+        })
+        $("#password").bind("input propertychange",function(){
+                console.log($(this).val().length);
+                if($(this).val().length>2 && $(this).val().length<11){
+                    $(".msg_password").html("密碼字數符合規則!");
+                    $(".msg_password").css("color","green");
+                    flag_password=true;
+                }
+                else{
+                    $(".msg_password").html("密碼字數不符合!");
+                    $(".msg_password").css("color","red");
+                    flag_password=false;
+                }
+        })
+        $("#con_password").bind("input propertychange",function(){
+            if($(this).val() == $("#password").val()){
+                $(".msg").html("密碼符合");
+                $(".msg").css("color","green");
+                flag_con_password=true;
+            }
+            else{
+                $(".msg").html("密碼錯誤");
+                $(".msg").css("color","red");
+                flag_con_password=false;
+            }
+        })
+        $("#mail").bind("input propertychange",function(){
+            if($(this).val().length >4 && $(this).val().length <11){
+                $(".msg_email").html("email字數符合規則!");
+                $(".msg_email").css("color","green");
+                flag_email=true;
+            }
+            else{
+                $(".msg_email").html("email字數不符合規則!");
+                $(".msg_email").css("color","red");
+                flag_email=false;
+            }
+        })
+        $(function(){
+            $("#ok_btn").click(function(){
+                consoloe.log($("#birthday").val());
+            })
+        })
+        $("#age").change(function () {
+            console.log($(this).val());
+            $("#age_text").html($(this).val() + ("歲"))
+        })
+        
+                var myinterest = [];
+                $.each($("input[name='interest']:checked"), function () {
+
+                    myinterest.push($(this).val());
+                })
+
+
+                var blood = [];
+                $.each($("input[name='blood']:checked"), function () {
+                    blood.push($(this).val());
+                })
+        $("#ok_btn").click(function(){
+            if(flag_username && flag_password && flag_con_password && flag_email){
+                $(".demo").html("<h2>帳號:"+$("#username").val()+"</h2><h2>密碼:"+$("#password").val()+"</h2><h2>信箱:"+$("#mail").val()+"</h2><h2>生日:"+$("#birthday").val()+"</h2><h2>年齡:"+$("#age").val()+"</h2><h2>年齡:"+$("#age").val()+"</h2><h2>年齡:"+$("#age").val()+"</h2>");
+            }
+            else{
+                alert("欄位有錯");
+            }
+        })
+    </script>
+</body>
+
+</html>
